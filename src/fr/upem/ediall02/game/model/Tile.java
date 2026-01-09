@@ -175,14 +175,20 @@ public class Tile {
 	
     }
     
+    private Color getTextColor(Color background) {
+	double luminance = 0.299 * background.getRed() + 0.587 * background.getGreen() + 0.114 * background.getBlue();
+	return luminance < 128 ? Color.WHITE : Color.BLACK;
+    }
+
     public void draw(Graphics g, int x, int y) {
 	Graphics2D g2D = (Graphics2D) g;
 	g2D.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 	
 	g.setFont(setFontValue());
-	g.setColor(getColor());
+	Color backgroundColor = getColor();
+	g.setColor(backgroundColor);
 	g.fillRect(x*W_TILE, y*H_TILE, W_TILE, H_TILE);
-	g.setColor(Color.BLACK);
+	g.setColor(getTextColor(backgroundColor));
 	if (this.value != 0) {
 	    drawCenteredValue(g, x, y);
 	}
