@@ -52,7 +52,7 @@ public class OptionMenu extends JMenuBar {
 	file.add(getHint);
 
 	exit.addActionListener(l -> {
-	    model.gameOver();
+	    window.exitGame();
 	});
 	file.add(exit);
 	
