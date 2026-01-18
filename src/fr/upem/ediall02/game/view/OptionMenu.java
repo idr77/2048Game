@@ -1,8 +1,10 @@
 package fr.upem.ediall02.game.view;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.KeyStroke;
 
 import fr.upem.ediall02.game.controller.ActionIA;
 import fr.upem.ediall02.game.controller.ActionUndo;
@@ -48,15 +50,34 @@ public class OptionMenu extends JMenuBar {
      * Set listeners to the menu item
      */
     private void setListeners() {
+	// File Menu Configuration
+	file.setMnemonic(KeyEvent.VK_F);
+	file.getAccessibleContext().setAccessibleDescription("File menu contains game utility options");
+
+	// Hint Item
 	getHint.addActionListener(new ActionIA(model, window));
+	getHint.setMnemonic(KeyEvent.VK_H);
+	getHint.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_SPACE, 0));
+	getHint.getAccessibleContext().setAccessibleDescription("Get a hint for the next move");
 	file.add(getHint);
 
+	// Exit Item
 	exit.addActionListener(l -> {
 	    model.gameOver();
 	});
+	exit.setMnemonic(KeyEvent.VK_X);
+	exit.getAccessibleContext().setAccessibleDescription("Exit the game");
 	file.add(exit);
 	
+	// Edit Menu Configuration
+	edit.setMnemonic(KeyEvent.VK_E);
+	edit.getAccessibleContext().setAccessibleDescription("Edit menu contains gameplay modification options");
+
+	// Undo Item
 	undo.addActionListener(new ActionUndo(model, window));
+	undo.setMnemonic(KeyEvent.VK_U);
+	undo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, 0));
+	undo.getAccessibleContext().setAccessibleDescription("Undo the last move");
 	edit.add(undo);
     }
 
