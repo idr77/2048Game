@@ -1,8 +1,11 @@
 package fr.upem.ediall02.game.view;
 
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.KeyStroke;
 
 import fr.upem.ediall02.game.controller.ActionIA;
 import fr.upem.ediall02.game.controller.ActionUndo;
@@ -39,7 +42,22 @@ public class OptionMenu extends JMenuBar {
     public OptionMenu(Game2048Model model, Window2048 window) {
 	this.model = model;
 	this.window = window;
+
+	// Set mnemonics for Menus
+	file.setMnemonic(KeyEvent.VK_F);
+	edit.setMnemonic(KeyEvent.VK_E);
+
 	setListeners();
+
+	// Add accelerators and mnemonics for MenuItems
+	getHint.setMnemonic(KeyEvent.VK_H);
+	getHint.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H, InputEvent.CTRL_DOWN_MASK));
+
+	exit.setMnemonic(KeyEvent.VK_X);
+
+	undo.setMnemonic(KeyEvent.VK_U);
+	undo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK));
+
 	this.add(file);
 	this.add(edit);
     }
