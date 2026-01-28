@@ -52,6 +52,8 @@ public class ScorePanel extends JPanel {
 	
 	JLabel highScoreLabel = new JLabel("High score ");
 	highScoreField = new JTextField(sizeTextField);
+	highScoreLabel.setLabelFor(highScoreField);
+	highScoreField.setToolTipText("Highest score achieved");
 	highScoreField.setEditable(false);
 	highScoreField.setBackground(new Color(248,233,223));
 	highScoreField.setHorizontalAlignment(JTextField.CENTER);
@@ -61,6 +63,8 @@ public class ScorePanel extends JPanel {
 	
 	JLabel scoreLabel = new JLabel("Current score ");
 	scoreField = new JTextField(sizeTextField);
+	scoreLabel.setLabelFor(scoreField);
+	scoreField.setToolTipText("Current game score");
 	scoreField.setEditable(false);
 	scoreField.setBackground(new Color(248,233,223));
 	scoreField.setHorizontalAlignment(JTextField.CENTER);
@@ -70,6 +74,8 @@ public class ScorePanel extends JPanel {
 	
 	JLabel highTileLabel = new JLabel("Best tile ");
 	highTileField = new JTextField(sizeTextField);
+	highTileLabel.setLabelFor(highTileField);
+	highTileField.setToolTipText("Highest tile value achieved");
 	highTileField.setEditable(false);
 	highTileField.setBackground(new Color(248,233,223));
 	highTileField.setHorizontalAlignment(JTextField.CENTER);
@@ -79,6 +85,8 @@ public class ScorePanel extends JPanel {
 	
 	JLabel tileLabel = new JLabel("Current Best Tile ");
 	tileField = new JTextField(sizeTextField);
+	tileLabel.setLabelFor(tileField);
+	tileField.setToolTipText("Highest tile value on current board");
 	tileField.setEditable(false);
 	tileField.setBackground(new Color(248,233,223));
 	tileField.setHorizontalAlignment(JTextField.CENTER);
