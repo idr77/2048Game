@@ -56,6 +56,7 @@ public class ScorePanel extends JPanel {
 	highScoreField.setBackground(new Color(248,233,223));
 	highScoreField.setHorizontalAlignment(JTextField.CENTER);
 	highScoreField.setBorder(null);
+	highScoreLabel.setLabelFor(highScoreField);
 	this.add(highScoreLabel, setPosition(gridX, gridY, regularInsets));
 	this.add(highScoreField, setPosition(gridX + 1, gridY, regularInsets));
 	
@@ -65,6 +66,7 @@ public class ScorePanel extends JPanel {
 	scoreField.setBackground(new Color(248,233,223));
 	scoreField.setHorizontalAlignment(JTextField.CENTER);
 	scoreField.setBorder(null);
+	scoreLabel.setLabelFor(scoreField);
 	this.add(scoreLabel, setPosition(gridX, ++gridY, spaceInsets));
 	this.add(scoreField, setPosition(gridX + 1, gridY, spaceInsets));
 	
@@ -74,6 +76,7 @@ public class ScorePanel extends JPanel {
 	highTileField.setBackground(new Color(248,233,223));
 	highTileField.setHorizontalAlignment(JTextField.CENTER);
 	highTileField.setBorder(null);
+	highTileLabel.setLabelFor(highTileField);
 	this.add(highTileLabel, setPosition(gridX, ++gridY, regularInsets));
 	this.add(highTileField, setPosition(gridX + 1, gridY, regularInsets));
 	
@@ -83,6 +86,7 @@ public class ScorePanel extends JPanel {
 	tileField.setBackground(new Color(248,233,223));
 	tileField.setHorizontalAlignment(JTextField.CENTER);
 	tileField.setBorder(null);
+	tileLabel.setLabelFor(tileField);
 	this.add(tileLabel, setPosition(gridX, ++gridY, regularInsets));
 	this.add(tileField, setPosition(gridX + 1, gridY, regularInsets));
 

@@ -7,6 +7,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.InputMap;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -108,11 +109,11 @@ public class Window2048 extends JFrame {
 	JPanel textPanel = new JPanel();
 	textPanel.setLayout(new GridBagLayout());
 	JLabel start = new JLabel();
-	start.setText("Press [Enter] to Start or Restart the game");
+	start.setText("<html>Press <b>[Enter]</b> to Start or Restart the game</html>");
 	JLabel undo = new JLabel();
-	undo.setText("Press [Z] to undo the last move");
+	undo.setText("<html>Press <b>[Z]</b> to undo the last move</html>");
 	JLabel IA = new JLabel();
-	IA.setText("Press [Space] to get hint from the AI solver");
+	IA.setText("<html>Press <b>[Space]</b> to get hint from the AI solver</html>");
 	textPanel.add(start, ScorePanel.setPosition(0, 0, ScorePanel.regularInsets));
 	textPanel.add(undo, ScorePanel.setPosition(0, 1, ScorePanel.regularInsets) );
 	textPanel.add(IA, ScorePanel.setPosition(0, 2, ScorePanel.regularInsets));
@@ -123,7 +124,7 @@ public class Window2048 extends JFrame {
      * Set keys
      */
     private void setKeys() {
-	InputMap input = boardPanel.getInputMap();
+	InputMap input = boardPanel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
 	
 	if (!model.isSaveOption()) {
 	    input.put(KeyStroke.getKeyStroke("Z"), "Undo");
