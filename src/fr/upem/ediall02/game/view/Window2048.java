@@ -108,11 +108,11 @@ public class Window2048 extends JFrame {
 	JPanel textPanel = new JPanel();
 	textPanel.setLayout(new GridBagLayout());
 	JLabel start = new JLabel();
-	start.setText("Press [Enter] to Start or Restart the game");
+	start.setText("<html>Press <b>[Enter]</b> to Start or Restart the game</html>");
 	JLabel undo = new JLabel();
-	undo.setText("Press [Z] to undo the last move");
+	undo.setText("<html>Press <b>[Z]</b> to undo the last move</html>");
 	JLabel IA = new JLabel();
-	IA.setText("Press [Space] to get hint from the AI solver");
+	IA.setText("<html>Press <b>[Space]</b> to get hint from the AI solver</html>");
 	textPanel.add(start, ScorePanel.setPosition(0, 0, ScorePanel.regularInsets));
 	textPanel.add(undo, ScorePanel.setPosition(0, 1, ScorePanel.regularInsets) );
 	textPanel.add(IA, ScorePanel.setPosition(0, 2, ScorePanel.regularInsets));

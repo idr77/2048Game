@@ -58,6 +58,7 @@ public class ScorePanel extends JPanel {
 	highScoreField.setBorder(null);
 	this.add(highScoreLabel, setPosition(gridX, gridY, regularInsets));
 	this.add(highScoreField, setPosition(gridX + 1, gridY, regularInsets));
+	highScoreLabel.setLabelFor(highScoreField);
 	
 	JLabel scoreLabel = new JLabel("Current score ");
 	scoreField = new JTextField(sizeTextField);
@@ -67,6 +68,7 @@ public class ScorePanel extends JPanel {
 	scoreField.setBorder(null);
 	this.add(scoreLabel, setPosition(gridX, ++gridY, spaceInsets));
 	this.add(scoreField, setPosition(gridX + 1, gridY, spaceInsets));
+	scoreLabel.setLabelFor(scoreField);
 	
 	JLabel highTileLabel = new JLabel("Best tile ");
 	highTileField = new JTextField(sizeTextField);
@@ -76,6 +78,7 @@ public class ScorePanel extends JPanel {
 	highTileField.setBorder(null);
 	this.add(highTileLabel, setPosition(gridX, ++gridY, regularInsets));
 	this.add(highTileField, setPosition(gridX + 1, gridY, regularInsets));
+	highTileLabel.setLabelFor(highTileField);
 	
 	JLabel tileLabel = new JLabel("Current Best Tile ");
 	tileField = new JTextField(sizeTextField);
@@ -85,6 +88,7 @@ public class ScorePanel extends JPanel {
 	tileField.setBorder(null);
 	this.add(tileLabel, setPosition(gridX, ++gridY, regularInsets));
 	this.add(tileField, setPosition(gridX + 1, gridY, regularInsets));
+	tileLabel.setLabelFor(tileField);
 
     }
     
