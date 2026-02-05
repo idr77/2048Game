@@ -60,7 +60,7 @@ public class OptionMenu extends JMenuBar {
 	file.add(getHint);
 
 	exit.addActionListener(l -> {
-	    model.gameOver();
+	    window.exitGame();
 	});
 	exit.setMnemonic('x');
 	exit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_DOWN_MASK));

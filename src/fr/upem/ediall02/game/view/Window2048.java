@@ -9,6 +9,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.InputMap;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 
@@ -59,7 +60,7 @@ public class Window2048 extends JFrame {
 	this.addWindowListener(new WindowAdapter() {
 	    @Override
 	    public void windowClosing(WindowEvent e) {
-		model.gameOver();
+		exitGame();
 	    }
 	});
 	this.setLocationRelativeTo(null);
@@ -153,6 +154,23 @@ public class Window2048 extends JFrame {
     
     public void updateScoreContainer() {
 	scorePanel.update();
+    }
+
+    /**
+     * Shows a confirmation dialog before exiting
+     */
+    public void exitGame() {
+	int choice = JOptionPane.showConfirmDialog(
+	    this,
+	    "Are you sure you want to exit?",
+	    "Exit Game",
+	    JOptionPane.YES_NO_OPTION,
+	    JOptionPane.QUESTION_MESSAGE
+	);
+
+	if (choice == JOptionPane.YES_OPTION) {
+	    model.gameOver();
+	}
     }
 
 }
